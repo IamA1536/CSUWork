@@ -11,9 +11,7 @@ def DateTable(num):
             list[i].append(0)
     for i in range(1, total + 1):
         list[1][i] = i
-
     m = 1
-
     for i in range(num):
         total = int(total / 2)
         for j in range(1, total + 1):
