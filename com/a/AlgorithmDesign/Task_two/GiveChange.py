@@ -3,17 +3,31 @@ if __name__ == "__main__":
     r = []
     n = [int(i) for i in input().split(" ")]
     n.sort(reverse=True)
-    m = int(input("Please input the change need: "))
+
+    pay = int(input("Please input the change need: "))
+
+    m = pay
     i = 0
-    while m != 0:
-        if i == len(n):
-            break
-        if n[i] > m:
-            i += 1
-            continue
-        m -= n[i]
-        r.append(n[i])
-    if m == 0:
-        print("Should pay {}".format([int(i) for i in r]))
-    else:
+
+    while n[i] > m:
+        i += 1
+        del n[i]
+
+    while len(n) > 0:
+        while m != 0:
+            m = pay
+            for i in n:
+                if m - i >= 0:
+                    m -= i
+                    r.append(i)
+                else:
+                    continue
+            if m == 0:
+                print("Should pay {0}".format([int(i) for i in r]))
+                break
+            else:
+                r = []
+                del n[0]
+
+    if len(r) == 0:
         print("Cannot give the cash")
