@@ -197,6 +197,7 @@ class Ui_MainWindow(object):
         self.gridLayout.addWidget(self.SreachEt, 1, 1, 1, 1)
         MainWindow.setCentralWidget(self.centralwidget)
 
+        self.NameEt.setFocus()
         self.retranslateUi(MainWindow)
         self.ExitBt.clicked.connect(MainWindow.close)
         self.SreachBt.clicked.connect(self.sreach)

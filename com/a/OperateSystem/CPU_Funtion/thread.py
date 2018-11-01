@@ -11,5 +11,5 @@ class timePass(QThread):
 
     def run(self):
         while True:
-            time.sleep(5)
+            time.sleep(1)
             self.msg.emit()
